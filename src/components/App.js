@@ -41,17 +41,17 @@ const App = () => {
             <Page id="about" headline="About">
                 <Logo mobile />
                 <div className="hero__image">
-                    <img src={state.images[10].original} alt="Holbrook Farms" />
+                    <img src={state.images[10].original} alt="Holbrook Farm" />
                 </div>
                 <p>
-                    Holbrook Farms is a full-service family-oriented multi-discipline training and boarding barn conveniently
+                    Holbrook Farm is a full-service family-oriented multi-discipline training and boarding barn conveniently
                     located to North Fulton, Cherokee and Forsyth counties. The 82-acre property features a 24-stall center
                     aisle barn. Our Outdoor Riding arena is (160x300) with 3” of silica sand maintained daily. Our 60’ round
                     pen is available for groundwork or training. Holbrook features 3 large turnout pastures and trails. All
                     disciplines are welcome.
                 </p>
                 <p>
-                    Inside our gates at Holbrook Farms it is our intent to encourage and support a family community for our
+                    Inside our gates at Holbrook Farm it is our intent to encourage and support a family community for our
                     horses and their partners. If you are looking for a laid-back environment to call home- please come visit
                     us.
                 </p>
