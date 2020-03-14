@@ -3,8 +3,10 @@ import { createContext, useEffect } from 'react';
 import App from './App';
 import Contact from './Contact';
 import Hamburger from './Hamburger';
+import Info from './Info';
 import Gallery from './Gallery';
 import Logo from './Logo';
+import Marker from './Marker';
 import Menu from './Menu';
 import Nav from './Nav';
 import Page from './Page';
@@ -44,9 +46,11 @@ export {
     Contact,
     data,
     Context,
-    Hamburger,
     Gallery,
+    Hamburger,
+    Info,
     Logo,
+    Marker,
     Menu,
     Nav,
     Page,

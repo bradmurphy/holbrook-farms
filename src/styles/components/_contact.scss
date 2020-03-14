@@ -88,6 +88,7 @@
 		border-left: 0;
 		border-right: 0;
 		border-top: 0;
+		color: $tertiary;
 		font-family: $font-copy;
 		font-size: 16px;
 		line-height: 24px;
@@ -97,12 +98,10 @@
 		transition: all .3s ease-in;
 
 		&--error {
-			background-color: $primary;
-			border: 2px solid $base;
-			color: $white;
+			border-bottom: 2px solid $primary;
 
 			&::placeholder {
-				color: $white !important;
+				color: $tertiary !important;
 			}
 		}
 

@@ -2,28 +2,9 @@ import React, { useContext } from 'react';
 import axios from 'axios';
 import GoogleMapReact from 'google-map-react';
 
-import { Context, SVG, validate } from './index';
+import { Context, Info, Marker, validate } from './index';
 const API_PATH = `${window.origin}/api/contact/index.php`;
 
-const Info = (props) => (
-    <div className="info" {...props}>
-        <h3>{props.contact.name}</h3>
-        <address>
-            {props.contact.address}
-        </address>
-        <a href={`mailto${props.contact.email}`} class="link">{props.contact.email}</a>
-        <div className="info__row">
-            <a href={`mailto${props.contact.phoneLink}`} class="link">{props.contact.phone}</a>
-            <a href={props.contact.directions} class="link" target="_blank" rel="noreferrer noopener">Directions</a>
-        </div>
-    </div>
-);
-
-const Marker = (props) => (
-    <div className="marker" {...props}>
-        <SVG />
-    </div>
-);
 
 const Contact = () => {
     const [ state, dispatch ] = useContext(Context);
