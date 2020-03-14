@@ -14,7 +14,7 @@ code {
 .wrapper {
 	box-sizing: border-box;
 	margin: 0 auto;
-	max-width: 770px;
+	max-width: 1080px;
 	padding: 0 20px;
 	width: 100%;
 }
@@ -27,6 +27,7 @@ code {
 		flex-direction: row;
 		flex-wrap: nowrap;
 		height: 100vh;
+		overflow: hidden;
 		width: 100vw;
 	}
 
@@ -47,26 +48,28 @@ code {
 	&__menu {
 		color: #fff;
 		background: $secondary;
+		min-width: 270px;
 		overflow: hidden;
-		transition: width .8s cubic-bezier(.19,1,.22,1);
-		width: 270px;
+		transition: margin .8s cubic-bezier(.19,1,.22,1);
+		width: 100%;
 
 		&--closed {
-			width: 0;
+			margin-left: -100%;
 
 			@media screen and (min-width: 768px) {
+				margin-left: 0;
 				width: 320px;
 			}
 		}
 	}
 
 	&__main {
-		align-items: stretch;
 		display: flex;
 		flex-direction: column;
-		flex: 1 auto;
 		overflow: auto;
+		min-width: 320px;
 		position: relative;
+		width: 100%;
 	}
 
 	&__hamburger {

@@ -6,9 +6,10 @@ import { Context } from "./Store";
 
 const App = () => {
   const [ state, dispatch ] = useContext(Context);
-  const openMenu = (menu) => !menu ? dispatch({ type: 'OPEN_MENU' }) : dispatch({ type: 'CLOSE_MENU' });
+  const openMenu = (menu) => menu ? dispatch({ type: 'CLOSE_MENU' }) : dispatch({ type: 'OPEN_MENU' });
   const scrollTo = (e) => {
       e.preventDefault();
+      dispatch({ type: 'CLOSE_MENU' });
       const element = document.getElementById(e.target.href.split('#')[1]);
       element.scrollIntoView({ behavior: 'smooth' });
   };
