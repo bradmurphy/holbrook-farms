@@ -1,0 +1,41 @@
+.link {
+	color: $primary;
+	cursor: pointer;
+	font-family: $font-headline;
+	font-size: 16px;
+	letter-spacing: .3px;
+	line-height: 24px;
+	margin: 4px 0;
+	position: relative;
+	text-decoration: none;
+	transition: all .3s ease-in;
+
+	&:after {
+		background-color: $primary;
+		bottom: -2px;
+		content: '';
+		display: inline-block;
+		height: 2px;
+		left: 0;
+		position: absolute;
+		transition: width 0.3s ease 0s, left 0.3s ease 0s;
+		width: 0;
+	}
+
+	@media screen and (min-width: 768px) {
+		&:hover:after {
+			width: 100%;
+		}
+	}
+}
+
+.link__submit {
+	@extend .link;
+	background: transparent;
+	border: none;
+	font-size: 24px;
+	line-height: 28px;
+	outline: 0;
+	margin: 10px auto 0 0;
+	padding: 0;
+}

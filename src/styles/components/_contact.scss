@@ -1,0 +1,141 @@
+.contact {
+	display: flex;
+	flex-direction: column;
+
+	@media screen and (min-width: 1140px) {
+		margin-top: 48px;
+		flex-direction: row-reverse;
+		flex-wrap: nowrap;
+	}
+
+	@media screen and (min-width: 1140px) {
+		&__left {
+			padding: 0 0 0 20px;
+		}
+
+		&__right {
+			padding: 0 20px 0 0;
+		}
+	}
+
+	&__left,
+	&__right {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		flex: 1 auto;
+		justify-content: center;
+		width: 100%;
+
+		@media screen and (min-width: 1140px) {
+			width: 50%;
+		}
+	}
+
+	&__form-thankyou {
+		color: $tertiary;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 175px;
+		padding: 15px;
+		text-align: left;
+
+		&[hidden] {
+			display: none;
+		}
+	}
+
+	&__form-error {
+		align-self: center;
+		background-color: $primary;
+		border-radius: 4px;
+		color: $white;
+		font-size: 16px;
+		line-height: 24px;
+		max-width: 800px;
+		padding: 15px;
+		width: 90%;
+
+		@media screen and (min-width: 768px) {
+			padding: 20px;
+		}
+
+		&[hidden] {
+			display: none;
+		}
+
+		a {
+			color: $white;
+		}
+	}
+
+	&__form-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-bottom: 75px;
+		transition: all .3s ease-in;
+		width: 100%;
+
+		&[hidden] {
+			display: none;
+		}
+	}
+
+	&__form-input {
+		background-color: transparent;
+		border-bottom: 2px solid $tertiary;
+		border-left: 0;
+		border-right: 0;
+		border-top: 0;
+		color: $tertiary;
+		font-family: $font-copy;
+		font-size: 16px;
+		line-height: 24px;
+		margin-bottom: 10px;
+		outline: 0;
+		padding: 15px 0;
+		transition: all .3s ease-in;
+
+		&--error {
+			border-bottom: 2px solid $primary;
+
+			&::placeholder {
+				color: $tertiary !important;
+			}
+		}
+
+		&::placeholder {
+			color: $tertiary;
+		}
+
+		&--text-area {
+			height: 300px;
+		}
+
+		@media screen and (min-width: 480px) {
+			font-size: 1.125em;
+			line-height: 1.5em;
+		}
+
+	}
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	border: 1px solid $secondary;
+	font-size: 16px;
+	line-height: 24px;
+	outline: 0;
+	padding: 20px;
+	transition: all .3s ease-in;
+	-webkit-text-fill-color: $white;
+	-webkit-box-shadow: 0 0 0px 1000px $secondary inset;
+}

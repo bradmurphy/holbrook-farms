@@ -1,0 +1,18 @@
+.hamburger {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	outline: 0;
+	position: fixed;
+	right: 10px;
+	top: 10px;
+	z-index: 99;
+
+	svg {
+		fill: $primary;
+	}
+
+	@media screen and (min-width: 768px) {
+		display: none;
+	}
+}

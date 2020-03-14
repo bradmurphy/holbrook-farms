@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Section = ({children,  headline, id }) => (
-    <section className="site__section" id={id}>
+const Page = ({children,  headline, id}) => (
+    <section className="app__section" id={id}>
         <div className="wrapper">
             <div className="headline__wrapper">
                 <h1 className="headline">{headline}</h1>
@@ -13,4 +13,4 @@ const Section = ({children,  headline, id }) => (
     </section>
 );
 
-export default Section;
+export default Page;

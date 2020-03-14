@@ -1,0 +1,66 @@
+.marker {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+
+.info {
+	align-items: center;
+	background: $white;
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	max-width: 200px;
+	padding: 10px;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+
+	&__row {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	h3 {
+		font-family: $font-copy;
+		font-size: 20px;
+		font-style: italic;
+		font-weight: bold;
+		letter-spacing: 1px;
+		line-height: 0;
+	}
+
+	address {
+		margin: 10px 0;
+	}
+
+	address, a {
+		font-family: $font-headline;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: normal;
+		line-height: 24px;
+	}
+
+	a {
+		color: $primary;
+		font-weight: bold;
+	}
+}
+
+#map {
+	position: relative;
+	height: 500px;
+	margin: 32px 0;
+	width: 100%;
+
+	@media screen and (min-width: 1140px) {
+		margin: 0;
+	}
+}
+
+#svg {
+	fill: $primary;
+}

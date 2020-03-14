@@ -4,8 +4,10 @@ import * as serviceWorker from './serviceWorker';
 import './styles/index.scss';
 
 // components
-import App from './App';
-import Store from './Store'
+import {
+    App,
+    Store
+} from './components';
 
 const Index = () => (
     <Store>

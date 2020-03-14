@@ -1,4 +1,4 @@
-const Reducer = (state, action) => {
+const reducer = (state, action) => {
     switch (action.type) {
         case 'OPEN_MENU':
             return {
@@ -20,9 +20,19 @@ const Reducer = (state, action) => {
                 ...state,
                 thumbnailPos: 'left'
             };
+        case 'UPDATE_FORM':
+            return {
+                ...state,
+                ...action.payload
+            };
+        case 'SEND_FORM':
+            return {
+                ...state,
+                ...action.payload
+            };
         default:
             return state;
     }
 };
 
-export default Reducer;
+export default reducer;
