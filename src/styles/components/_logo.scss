@@ -4,13 +4,12 @@
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
-	height: 210px;
 	justify-content: space-between;
 	margin: 32px 0 64px;
 	padding: 20px;
 
 	&--mobile {
-		margin: 32px 0;
+		margin: 16px 0;
 		.logo-wrapper {
 			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 		}
@@ -48,14 +47,9 @@
 			text-align: center;
 		}
 	}
+}
 
-	span {
-		color: $white;
-		font-family: $font-copy;
-		font-size: 20px;
-		font-style: italic;
-		font-weight: bold;
-		letter-spacing: 1px;
-		text-align: center;
-	}
+canvas {
+	height: 100px;
+	transform: translateY(-30px);
 }

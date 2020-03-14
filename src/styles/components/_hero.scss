@@ -1,9 +1,13 @@
 .hero__image {
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-	height: 500px;
+	height: 300px;
 	margin-bottom: 48px;
 	overflow: hidden;
 	position: relative;
+
+	@media screen and (min-width: 768px) {
+		height: 500px;
+	}
 
 	img {
 		position: absolute;
