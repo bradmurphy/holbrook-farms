@@ -9,7 +9,7 @@ const Info = (props) => (
         <a href={`mailto:${props.contact.email}`} className="link">{props.contact.email}</a>
         <div className="info__row">
             <a href={`tel:${props.contact.phoneLink}`} className="link">{props.contact.phone}</a>
-            <a href={props.contact.directions} className="link" target="_blank" rel="noreferrer noopener">Directions</a>
+            <a href={props.contact.directions} className="link" target="_blank" rel="noreferrer noopener">DIRECTIONS</a>
         </div>
     </div>
 );
