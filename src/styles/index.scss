@@ -2,8 +2,12 @@
 @import "~react-image-gallery/styles/scss/image-gallery.scss";
 @import 'typography';
 @import './components/app';
+@import './components/contact';
 @import './components/hamburger';
+@import './components/link';
+@import './components/list';
 @import './components/logo';
+@import'./components/map';
 @import './components/menu';
 @import './components/nav';
 
@@ -13,11 +17,10 @@
 }
 
 body, html {
-	background: $base;
+	height: 100vh;
 	margin: 0;
 	padding: 0;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	width: 100vw;
 }
 
 .wrapper {

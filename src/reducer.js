@@ -20,6 +20,16 @@ const reducer = (state, action) => {
                 ...state,
                 thumbnailPos: 'left'
             };
+        case 'UPDATE_FORM':
+            return {
+                ...state,
+                ...action.payload
+            };
+        case 'SEND_FORM':
+            return {
+                ...state,
+                ...action.payload
+            };
         default:
             return state;
     }
