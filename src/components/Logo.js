@@ -1,81 +1,61 @@
-import React, { Component } from 'react';
+import React, { useRef } from 'react';
 
-class Logo extends Component {
-    componentDidMount() {
-        const { mobile } = this.props;
+// components
+import { useWindowEvent } from './';
 
-        this.canvas = this.refs.canvas;
-        this.ctx = this.canvas.getContext('2d');
-        this.font = '32px Playfair Display bold';
-        this.w = this.canvas.width;
-        this.h = this.canvas.height;
-        this.curve = 60;
-        this.offsetY = 4;
-        this.bottom = 200;
-        this.textHeight = 64;
-        this.isTri = false;
-        this.dltY = null;
-        this.angleSteps = 180 / this.w;
-        this.i = this.w;
-        this.y = null;
+const Logo = ({mobile}) => {
+    const canvas = useRef(null);
 
-        this.os = document.createElement('canvas');
-        this.octx = this.os.getContext('2d');
+    useWindowEvent('load', () => {
+        const ctx = canvas.current.getContext('2d');
+        const font = '32px Playfair Display bold';
+        const w = canvas.current.width;
+        const h = canvas.current.height;
+        const curve = 60;
+        const offsetY = 4;
+        const bottom = 200;
+        const textHeight = 64;
+        const angleSteps = 180 / w;
 
-        this.os.width = this.w;
-        this.os.height = this.h;
+        let i = w;
+        let y = null;
 
-        this.octx.font = this.font;
-        this.octx.fillStyle = mobile ? '#111' : '#fff';
-        this.octx.textBaseline = 'top';
-        this.octx.textAlign = 'center';
+        const os = document.createElement('canvas');
+        const octx = os.getContext('2d');
 
-        this.renderText();
-    };
+        os.width = w;
+        os.height = h;
 
-    renderText() {
-        /// clear canvases
-        this.octx.clearRect(0, 0, this.w, this.h);
-        this.ctx.clearRect(0, 0, this.w, this.h);
+        octx.font = font;
+        octx.fillStyle = mobile ? '#111' : '#fff';
+        octx.textBaseline = 'top';
+        octx.textAlign = 'center';
 
-        /// draw text (text may change)
-        this.octx.fillText('HOLBROOK FARM', this.w * 0.5, 0);
+        octx.clearRect(0, 0, w, h);
+        ctx.clearRect(0, 0, w, h);
 
-        /// slide and dice
-        this.dltY = this.curve / this.textHeight;  /// calculate delta for roof/triangle
-        this.y = 0;                      /// reset y in case we do roof
-        this.i = this.w;                      /// init "x"
+        octx.fillText('HOLBROOK FARM', w * 0.5, 0);
 
-        while (this.i--) {
+        y = 0;
+        i = w;
 
-            if (this.isTri) {
-                /// bounce delta value mid-way for triangle
-                this.y += this.dltY;
-                if (this.i === (this.w * 0.5)|0) this.dltY = -this.dltY;
+        while (i--) {
+            y = bottom - curve * Math.sin(i * angleSteps * Math.PI / 180);
 
-            } else {
-                /// calc length based on radius+angle for curve
-                this.y = this.bottom - this.curve * Math.sin(this.i * this.angleSteps * Math.PI / 180);
-            }
-
-            /// draw a slice
-            this.ctx.drawImage(this.os, this.i, 0, 1, this.textHeight,
-                this.i, this.h * 0.5 - this.offsetY / this.textHeight * this.y, 1, this.y);
+            ctx.drawImage(os, i, 0, 1, textHeight,
+                i, h * 0.5 - offsetY / textHeight * y, 1, y);
         }
-    };
+    });
 
-    render() {
-        const { mobile } = this.props;
-        return (
-            <div className={`logo ${mobile ? 'logo--mobile' : ''}`}>
-                <div className="logo-wrapper">
-                    <h1>H</h1>
-                </div>
-
-                <canvas id="canvas" ref="canvas"></canvas>
+    return (
+        <div className={`logo ${mobile ? 'logo--mobile' : ''}`}>
+            <div className="logo-wrapper">
+                <h1>H</h1>
             </div>
-        );
-    }
-}
+
+            <canvas id="canvas" ref={canvas}></canvas>
+        </div>
+    );
+};
 
 export default Logo;
