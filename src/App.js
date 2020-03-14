@@ -1,18 +1,39 @@
 import React, { useContext } from 'react';
 
 // components
+import Gallery from './components/Gallery';
 import Menu from './components/Menu';
-import { Context } from "./Store";
+import Section from './components/Section';
+import { Context, useWindowEvent } from './Store';
 
 const App = () => {
   const [ state, dispatch ] = useContext(Context);
+
   const openMenu = (menu) => menu ? dispatch({ type: 'CLOSE_MENU' }) : dispatch({ type: 'OPEN_MENU' });
+
   const scrollTo = (e) => {
       e.preventDefault();
       dispatch({ type: 'CLOSE_MENU' });
       const element = document.getElementById(e.target.href.split('#')[1]);
       element.scrollIntoView({ behavior: 'smooth' });
   };
+
+  useWindowEvent('resize', () => {
+      if(window.matchMedia('(min-width: 768px)').matches) {
+          dispatch({ type: 'THUMB_DESKTOP' });
+      } else {
+          dispatch({ type: 'THUMB_MOBILE'} );
+      }
+  });
+
+    useWindowEvent('load', () => {
+        console.log(window.matchMedia('(min-width: 768px)').matches);
+        if(window.matchMedia('(min-width: 768px)').matches) {
+            dispatch({ type: 'THUMB_DESKTOP' });
+        } else {
+            dispatch({ type: 'THUMB_MOBILE'} );
+        }
+    });
 
   return (
       <div className="site__wrapper">
@@ -35,47 +56,31 @@ const App = () => {
           </nav>
         </Menu>
         <div className="site__main">
-            <button className="site__hamburger" onClick={() => openMenu(state.menu)}>Menu</button>
-            <section className="site__section-wrapper" id="about">
-                <div className="site__section">
-                    <div className="wrapper">
-                        <h1>About</h1>
-                        <p>
-                            As much stuff as possible — with as little fear as possible. It’s much, much better to wind up with a lot of crap having tried it than to overthink in the beginning and not do it.
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <section className="site__section-wrapper" id="boarding">
-                <div className="site__section">
-                    <div className="wrapper">
-                        <h1>Boarding</h1>
-                        <p>
-                            As much stuff as possible — with as little fear as possible. It’s much, much better to wind up with a lot of crap having tried it than to overthink in the beginning and not do it.
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <section className="site__section-wrapper" id="gallery">
-                <div className="site__section">
-                    <div className="wrapper">
-                        <h1>Gallery</h1>
-                        <p>
-                            As much stuff as possible — with as little fear as possible. It’s much, much better to wind up with a lot of crap having tried it than to overthink in the beginning and not do it.
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <section className="site__section-wrapper" id="contact">
-                <div className="site__section">
-                    <div className="wrapper">
-                        <h1>Contact</h1>
-                        <p>
-                            As much stuff as possible — with as little fear as possible. It’s much, much better to wind up with a lot of crap having tried it than to overthink in the beginning and not do it.
-                        </p>
-                    </div>
-                </div>
-            </section>
+            <button className="site__hamburger" onClick={() => openMenu(state.menu)}>
+                <svg viewBox="0 0 100 80" width="20" height="20">
+                    <rect width="100" height="20"></rect>
+                    <rect y="30" width="100" height="20"></rect>
+                    <rect y="60" width="100" height="20"></rect>
+                </svg>
+            </button>
+            <Section id="about" headline="About">
+                <p>
+                    As much stuff as possible — with as little fear as possible. It’s much, much better to wind up with a lot of crap having tried it than to overthink in the beginning and not do it.
+                </p>
+            </Section>
+            <Section id="boarding" headline="Boarding">
+                <p>
+                    As much stuff as possible — with as little fear as possible. It’s much, much better to wind up with a lot of crap having tried it than to overthink in the beginning and not do it.
+                </p>
+            </Section>
+            <Section id="gallery" headline="Gallery">
+                <Gallery images={state.images} pos={state.thumbnailPos} />
+            </Section>
+            <Section id="contact" headline="Contact">
+                <p>
+                    As much stuff as possible — with as little fear as possible. It’s much, much better to wind up with a lot of crap having tried it than to overthink in the beginning and not do it.
+                </p>
+            </Section>
         </div>
       </div>
   )

@@ -8,7 +8,7 @@ const Menu = ({children,  open}) => (
                 <h1>H</h1>
             </div>
 
-            <span>holbrook farms</span>
+            <span><em>Holbrook Farms</em></span>
         </div>
 
         {children}
