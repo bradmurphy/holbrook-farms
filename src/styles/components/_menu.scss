@@ -1,0 +1,20 @@
+.menu {
+	box-shadow: 7px 0 7px -7px $black;
+	box-sizing: border-box;
+	color: $white;
+	background: $tertiary;
+	min-width: 270px;
+	overflow: hidden;
+	padding: 0 20px;
+	transition: margin .8s cubic-bezier(.19,1,.22,1);
+	width: 100%;
+
+	&--closed {
+		margin-left: -100%;
+
+		@media screen and (min-width: 768px) {
+			margin-left: 0;
+			width: 320px;
+		}
+	}
+}
