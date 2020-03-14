@@ -4,6 +4,7 @@
 @import './components/app';
 @import './components/contact';
 @import './components/hamburger';
+@import './components/hero';
 @import './components/link';
 @import './components/list';
 @import './components/logo';
@@ -38,6 +39,11 @@ body, html {
 .image-gallery-thumbnail {
 	cursor: pointer;
 	transition: all .3s ease-in !important;
+}
+
+.image-gallery-swipe,
+.image-gallery-thumbnails-container {
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .image-gallery-thumbnail.active,
