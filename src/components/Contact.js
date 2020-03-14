@@ -27,7 +27,7 @@ const Contact = () => {
         try {
             if (canSubmit) {
                 const resp = await axios.post(`${API_PATH}`,
-                    { ...state.contact },
+                    { ...state.input },
                     {
                         headers: { 'content-type': 'application/json' }
                     });
@@ -44,6 +44,8 @@ const Contact = () => {
         }
         catch(e) { dispatch({type: 'SEND_FORM', payload: { input: { error: true } } }); }
     };
+
+    console.log(state.input);
 
     return (
         <section className="contact">
@@ -62,9 +64,9 @@ const Contact = () => {
                 Thankyou for contacting me, I'll get back to you as soon as possible!
             </span>
                 <form action="#" className="contact__form-wrapper" hidden={state.input.sent}>
-                    <input type="text" name="name" placeholder="Name"
+                    <input autoComplete="off" type="text" name="name" placeholder="Name"
                            className={nameErrorStyle}
-                           value={state.name}
+                           value={state.input.name}
                            onChange={(e) => {
                                const payload = {
                                    input: { ...state.input, name: e.target.value },
@@ -74,24 +76,24 @@ const Contact = () => {
                                dispatch({ type: 'UPDATE_FORM', payload });
                            }}
                     />
-                    <input type="email" name="email" placeholder="E-mail"
+                    <input autoComplete="off" type="email" name="email" placeholder="E-mail"
                            className={emailErrorStyle}
                            value={state.input.email}
                            onChange={(e) => {
                                const payload = {
                                    input: { ...state.input, email: e.target.value },
-                                   errors: { ...state.errors, email: validate(e.target.value, 'email') }
+                                   errors: { ...state.errors, input: { email: validate(e.target.value, 'email') } }
                                };
 
                                dispatch({ type: 'UPDATE_FORM', payload });
                            }}
                     />
-                    <textarea name="message" placeholder="Have a question?  Feel free to reach out!"
+                    <textarea autoComplete="off" name="message" placeholder="Have a question?  Feel free to reach out!"
                       className={`${messageErrorStyle} contact__form-input--text-area`}
                       onChange={(e) => {
                           const payload = {
                               input: { ...state.input, message: e.target.value },
-                              errors: { ...state.errors, message: validate(e.target.value, 'message') }
+                              errors: { ...state.errors, input: { message: validate(e.target.value, 'message') } }
                           };
 
                           dispatch({ type: 'UPDATE_FORM', payload });

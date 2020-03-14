@@ -6,7 +6,7 @@ const Logo = ({ mobile }) => (
             <h1>H</h1>
         </div>
 
-        <span><em>Holbrook Farms</em></span>
+        <span><em>Holbrook Farm</em></span>
     </div>
 );
 

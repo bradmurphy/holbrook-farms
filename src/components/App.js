@@ -40,15 +40,18 @@ const App = () => {
             <Hamburger click={() => openMenu(state.menu)} />
             <Page id="about" headline="About">
                 <Logo mobile />
+                <div className="hero__image">
+                    <img src={state.images[10].original} alt="Holbrook Farm" />
+                </div>
                 <p>
-                    Holbrook Farms is a full-service family-oriented multi-discipline training and boarding barn conveniently
+                    Holbrook Farm is a full-service family-oriented multi-discipline training and boarding barn conveniently
                     located to North Fulton, Cherokee and Forsyth counties. The 82-acre property features a 24-stall center
                     aisle barn. Our Outdoor Riding arena is (160x300) with 3” of silica sand maintained daily. Our 60’ round
                     pen is available for groundwork or training. Holbrook features 3 large turnout pastures and trails. All
                     disciplines are welcome.
                 </p>
                 <p>
-                    Inside our gates at Holbrook Farms it is our intent to encourage and support a family community for our
+                    Inside our gates at Holbrook Farm it is our intent to encourage and support a family community for our
                     horses and their partners. If you are looking for a laid-back environment to call home- please come visit
                     us.
                 </p>
@@ -90,7 +93,7 @@ const App = () => {
                     </ul>
                 </div>
                 <div className="list">
-                    <h3>Amenities</h3>
+                    <h3>Pasture Board Includes unlimited access to most amenities</h3>
                     <ul>
                         <li>Hot and Cold Wash Racks</li>
                         <li>Tack Rooms/Bathroom/Breakroom</li>
@@ -110,7 +113,7 @@ const App = () => {
             </Page>
             <Page id="contact" headline="Contact">
                 <p>
-                    Stop by and Visit our Farm.  We are a working farm, so please call us for a convenient appointment-we like to be able to give you a tour.
+                    Stop by and Visit our Farm.  We are a working farm, so please call us for a convenient appointment -- we like to be able to give you a tour.
                 </p>
                 <Contact />
             </Page>
