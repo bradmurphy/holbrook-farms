@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
+import { Context, useWindowEvent } from './Store';
 
 // components
 import Gallery from './components/Gallery';
 import Menu from './components/Menu';
 import Section from './components/Section';
-import { Context, useWindowEvent } from './Store';
 
 const App = () => {
   const [ state, dispatch ] = useContext(Context);
@@ -18,40 +18,21 @@ const App = () => {
       element.scrollIntoView({ behavior: 'smooth' });
   };
 
-  useWindowEvent('resize', () => {
-      if(window.matchMedia('(min-width: 768px)').matches) {
-          dispatch({ type: 'THUMB_DESKTOP' });
-      } else {
-          dispatch({ type: 'THUMB_MOBILE'} );
-      }
-  });
+  const switchThumbPos = () => window.matchMedia('(min-width: 768px)').matches ?
+    dispatch({ type: 'THUMB_DESKTOP' }) : dispatch({ type: 'THUMB_MOBILE' });
 
-    useWindowEvent('load', () => {
-        console.log(window.matchMedia('(min-width: 768px)').matches);
-        if(window.matchMedia('(min-width: 768px)').matches) {
-            dispatch({ type: 'THUMB_DESKTOP' });
-        } else {
-            dispatch({ type: 'THUMB_MOBILE'} );
-        }
-    });
+  useWindowEvent('resize', switchThumbPos);
+  useWindowEvent('load', switchThumbPos);
 
   return (
       <div className="site__wrapper">
         <Menu open={state.menu}>
           <nav className="site__nav">
               <ul>
-                  <li>
-                      <a href="#about" onClick={(e) => scrollTo(e) }>About</a>
-                  </li>
-                  <li>
-                      <a href="#boarding" onClick={(e) => scrollTo(e) }>Boarding</a>
-                  </li>
-                  <li>
-                      <a href="#gallery" onClick={(e) => scrollTo(e) }>Gallery</a>
-                  </li>
-                  <li>
-                      <a href="#contact" onClick={(e) => scrollTo(e) }>Contact</a>
-                  </li>
+                  <li><a href="#about" onClick={(e) => scrollTo(e) }>About</a></li>
+                  <li><a href="#boarding" onClick={(e) => scrollTo(e) }>Boarding</a></li>
+                  <li><a href="#gallery" onClick={(e) => scrollTo(e) }>Gallery</a></li>
+                  <li><a href="#contact" onClick={(e) => scrollTo(e) }>Contact</a></li>
               </ul>
           </nav>
         </Menu>
