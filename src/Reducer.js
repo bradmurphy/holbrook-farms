@@ -10,6 +10,16 @@ const Reducer = (state, action) => {
                 ...state,
                 menu: false
             };
+        case 'THUMB_MOBILE':
+            return {
+                ...state,
+                thumbnailPos: 'bottom'
+            };
+        case 'THUMB_DESKTOP':
+            return {
+                ...state,
+                thumbnailPos: 'left'
+            };
         default:
             return state;
     }
