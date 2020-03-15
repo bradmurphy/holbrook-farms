@@ -24,7 +24,7 @@ const Contact = ({nameErrorStyle, emailErrorStyle, messageErrorStyle, validate, 
             Thanks for reaching out, we'll get back to you as soon as possible!
         </span>
             <form action="#" className="contact__form-wrapper" hidden={state.input.sent}>
-                <input autoComplete="off" type="text" name="name" placeholder="Name"
+                <input type="text" name="name" placeholder="Name"
                        className={nameErrorStyle}
                        value={state.input.name}
                        onChange={(e) => {
@@ -36,7 +36,7 @@ const Contact = ({nameErrorStyle, emailErrorStyle, messageErrorStyle, validate, 
                            dispatch({ type: 'UPDATE_FORM', payload });
                        }}
                 />
-                <input autoComplete="off" type="email" name="email" placeholder="E-mail"
+                <input type="email" name="email" placeholder="E-mail"
                        className={emailErrorStyle}
                        value={state.input.email}
                        onChange={(e) => {
@@ -48,7 +48,7 @@ const Contact = ({nameErrorStyle, emailErrorStyle, messageErrorStyle, validate, 
                            dispatch({ type: 'UPDATE_FORM', payload });
                        }}
                 />
-                <textarea autoComplete="off" name="message" placeholder="Have a question?  Feel free to reach out!"
+                <textarea name="message" placeholder="Have a question?  Feel free to reach out!"
                   className={`${messageErrorStyle} contact__form-input--text-area`}
                   onChange={(e) => {
                       const payload = {
