@@ -1,8 +1,9 @@
 import React from 'react';
+import Logo from './Logo';
 
 const Info = (props) => (
     <div className="info" {...props}>
-        <h3>{props.contact.name}</h3>
+        <Logo map />
         <address>
             {props.contact.address}
         </address>

@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 // components
 import { useWindowEvent } from './';
 
-const Logo = ({mobile}) => {
+const Logo = ({mobile, map}) => {
     const canvas = useRef(null);
 
     useWindowEvent('load', () => {
@@ -27,7 +27,7 @@ const Logo = ({mobile}) => {
         os.height = h;
 
         octx.font = font;
-        octx.fillStyle = mobile ? '#111' : '#fff';
+        octx.fillStyle = mobile || map ? '#111' : '#fff';
         octx.textBaseline = 'top';
         octx.textAlign = 'center';
 
@@ -48,8 +48,8 @@ const Logo = ({mobile}) => {
     });
 
     return (
-        <div className={`logo ${mobile ? 'logo--mobile' : ''}`}>
-            <div className="logo-wrapper">
+        <div className={`logo ${mobile ? 'logo--mobile' : ''} ${map? 'logo--map' : ''}`}>
+            <div className={`logo-wrapper ${map ? 'logo--hidden' : ''}`}>
                 <h1>H</h1>
             </div>
 

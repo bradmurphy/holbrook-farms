@@ -8,6 +8,23 @@
 	margin: 32px 0 64px;
 	padding: 20px;
 
+	&--hidden {
+		display: none !important;
+	}
+
+	&--map {
+		margin: 0 auto;
+		padding-bottom: 100px;
+		position: relative;
+
+		canvas {
+			left: 50%;
+			position: absolute;
+			top: -20px;
+			transform: translatex(-50%);
+		}
+	}
+
 	&--mobile {
 		margin: 16px 0;
 		.logo-wrapper {
