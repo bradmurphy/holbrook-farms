@@ -14,7 +14,7 @@ const Contact = ({nameErrorStyle, emailErrorStyle, messageErrorStyle, validate, 
                 <GoogleMapReact
                     bootstrapURLKeys={{key: 'AIzaSyCzrdGdYeAdvD8Y3RnUUvgwcGmH5cAdKko'}}
                     center={[34.2057698, -84.2684935]}
-                    zoom={15} />
+                    zoom={17.25} />
                         <Info contact={state.contact} lat={34.2057698} lng={-84.2684935} />
                         <Marker lat={34.2057698} lng={-84.2684935} />
             </div>
