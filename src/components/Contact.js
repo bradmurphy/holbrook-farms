@@ -21,7 +21,7 @@ const Contact = ({nameErrorStyle, emailErrorStyle, messageErrorStyle, validate, 
         </div>
         <div className="contact__right">
             <span className="contact__form-thankyou" hidden={!state.input.sent}>
-            Thankyou for contacting me, I'll get back to you as soon as possible!
+            Thanks for reaching out, we'll get back to you as soon as possible!
         </span>
             <form action="#" className="contact__form-wrapper" hidden={state.input.sent}>
                 <input autoComplete="off" type="text" name="name" placeholder="Name"

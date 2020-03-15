@@ -35,9 +35,10 @@
 	&__form-thankyou {
 		color: $tertiary;
 		display: flex;
+		font-family: $font-copy;
+		font-size: 16px;
 		justify-content: center;
-		margin-bottom: 175px;
-		padding: 15px;
+		line-height: 24px;
 		text-align: left;
 
 		&[hidden] {

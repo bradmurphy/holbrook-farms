@@ -1,5 +1,11 @@
 .app {
 
+	&__content {
+		p {
+			margin: 10px 0;
+		}
+	}
+
 	&__wrapper {
 		display: flex;
 		flex-direction: row;

@@ -6,7 +6,7 @@ const Page = ({children,  headline, id}) => (
             <div className="headline__wrapper">
                 <h1 className="headline">{headline}</h1>
             </div>
-            <div className="section__content">
+            <div className="app__content">
                 {children}
             </div>
         </div>
