@@ -2,7 +2,7 @@ export default {
     menu: false,
     contact: {
         name: 'Holbrook Farm',
-        address: '2756 Holbrook Campground Road, Alpharetta, GA 30004',
+        address: '2756 Holbrook Campground Rd Alpharetta, GA 30004',
         email: 'billyholbrook12@gmail.com',
         phone: '(678) 230-6578',
         phoneLink: '6782306578',
