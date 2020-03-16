@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 // components
 import { useWindowEvent } from './';
 
-const Logo = ({mobile, map}) => {
+const Logo = ({mobile, map, menu}) => {
     const canvas = useRef(null);
 
     useWindowEvent('load', () => {
@@ -48,7 +48,7 @@ const Logo = ({mobile, map}) => {
     });
 
     return (
-        <div className={`logo ${mobile ? 'logo--mobile' : ''} ${map? 'logo--map' : ''}`}>
+        <div className={`logo${menu ? ' logo--menu' : ''}${mobile ? ' logo--mobile' : ''}${map? ' logo--map' : ''}`}>
             <div className={`logo-wrapper ${map ? 'logo--hidden' : ''}`}>
                 <h1>H</h1>
             </div>

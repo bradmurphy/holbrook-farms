@@ -1,9 +1,13 @@
 .menu {
+	align-items: center;
 	background: $tertiary;
 	box-shadow: 7px 0 7px -7px $black;
 	box-sizing: border-box;
 	color: $white;
+	display: flex;
+	flex-direction: column;
 	height: 100vh;
+	justify-content: center;
 	left: 0;
 	max-width: 270px;
 	overflow: hidden;

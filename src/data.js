@@ -21,22 +21,39 @@ export default {
         message: false
     },
     thumbnailPos: 'left',
+    hero: './images/desktop-9.jpg',
     images: [
         {
-            original: './images/desktop-11.jpg',
-            thumbnail: './images/thumb-11.jpg',
+            original: './images/desktop-8.jpg',
+            thumbnail: './images/thumb-8.jpg',
+        },
+        {
+            original: './images/desktop-12.jpg',
+            thumbnail: './images/thumb-12.jpg',
+        },
+        {
+            original: './images/desktop-7.jpg',
+            thumbnail: './images/thumb-7.jpg',
+        },
+        {
+            original: './images/desktop-13.jpg',
+            thumbnail: './images/thumb-13.jpg',
+        },
+        {
+            original: './images/desktop-15.jpg',
+            thumbnail: './images/thumb-15.jpg',
         },
         {
             original: './images/desktop-10.jpg',
             thumbnail: './images/thumb-10.jpg',
         },
         {
-            original: './images/desktop-1.jpg',
-            thumbnail: './images/thumb-1.jpg',
+            original: './images/desktop-14.jpg',
+            thumbnail: './images/thumb-14.jpg',
         },
         {
-            original: './images/desktop-2.jpg',
-            thumbnail: './images/thumb-2.jpg',
+            original: './images/desktop-1.jpg',
+            thumbnail: './images/thumb-1.jpg',
         },
         {
             original: './images/desktop-3.jpg',
@@ -55,16 +72,16 @@ export default {
             thumbnail: './images/thumb-6.jpg',
         },
         {
-            original: './images/desktop-7.jpg',
-            thumbnail: './images/thumb-7.jpg',
+            original: './images/desktop-16.jpg',
+            thumbnail: './images/thumb-16.jpg',
         },
         {
-            original: './images/desktop-8.jpg',
-            thumbnail: './images/thumb-8.jpg',
+            original: './images/desktop-11.jpg',
+            thumbnail: './images/thumb-11.jpg',
         },
         {
-            original: './images/desktop-9.jpg',
-            thumbnail: './images/thumb-9.jpg',
+            original: './images/desktop-2.jpg',
+            thumbnail: './images/thumb-2.jpg',
         }
     ]
 }

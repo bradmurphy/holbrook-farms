@@ -81,19 +81,12 @@ const App = () => {
                 <Page id="about" headline="About">
                     <Logo mobile />
                     <div className="hero__image">
-                        <img src={state.images[10].original} alt="Holbrook Farm" />
+                        <img src={state.hero} alt="Holbrook Farm" />
                     </div>
                     <p>
-                        Holbrook Farm is a full-service family-oriented multi-discipline training and boarding barn conveniently
-                        located to North Fulton, Cherokee and Forsyth counties. The 82-acre property features a 24-stall center
-                        aisle barn. Our Outdoor Riding arena is (160x300) with 3” of silica sand maintained daily. Our 60’ round
-                        pen is available for groundwork or training. Holbrook features 3 large turnout pastures and trails. All
-                        disciplines are welcome.
-                    </p>
+                        Holbrook Farm is a full-service family-oriented multi-discipline training and boarding barn conveniently located to North Fulton, Cherokee and Forsyth counties.  The 82-acre property features a 24-stall center aisle barn. Our Outdoor Riding arena is (160x300) with 3” of silica sand maintained daily.  Our 60’ round pen is available for groundwork or training. Holbrook features 3 large turnout pastures and trails. All disciplines are welcome.</p>
                     <p>
-                        Inside our gates at Holbrook Farm it is our intent to encourage and support a family community for our
-                        horses and their partners. If you are looking for a laid-back environment to call home- please come visit
-                        us.
+                        Mr. Holbrook has shown and exhibited horses for over 30 years throughout the Southeast. Holbrook Farm is a 3rd generation working show barn with the experience and knowledge to provide a safe and exceptional environment. Inside our gates at Holbrook Farm it is our intent to encourage and support a family community for our horses and their partners. If you are looking for a relaxed easy-going environment to call home- please come by and visit us.
                     </p>
                 </Page>
                 <Page id="boarding" headline="Boarding">
@@ -116,8 +109,9 @@ const App = () => {
                         </ul>
                     </div>
                     <div className="list">
-                        <h3>Full Board Includes unlimited access to all amenities:</h3>
+                        <h3>Full Board (<strong>$625</strong>)</h3>
                         <ul>
+                            <li>Unlimited access to all amenities</li>
                             <li>Hot and Cold Wash Racks</li>
                             <li>Tack Rooms/Bathroom/Breakroom</li>
                             <li>12x12 Stalls (limited 12x24)</li>
@@ -133,8 +127,9 @@ const App = () => {
                         </ul>
                     </div>
                     <div className="list">
-                        <h3>Pasture Board Includes unlimited access to most amenities</h3>
+                        <h3>Pasture Board (<strong>$325</strong>)</h3>
                         <ul>
+                            <li>Unlimited access to all amenities</li>
                             <li>Hot and Cold Wash Racks</li>
                             <li>Tack Rooms/Bathroom/Breakroom</li>
                             <li>All water cleaned daily</li>
